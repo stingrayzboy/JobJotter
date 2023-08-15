@@ -8,9 +8,31 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container py-3">
+    <%= render 'shared/nav' %>
+    <main>
+      <%= yield %>
+    </main>
+
+    <%= render 'shared/footer' %>
+  </div>
   </body>
 </html>
